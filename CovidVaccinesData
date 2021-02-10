@@ -60,6 +60,14 @@ Select
 from can_vaccines cv
 order by cv.dates asc
 
+--Use a window function to take the average number of total vaccinations next to a distinct list of countries
+Select
+	Distinct(country) 
+-- 	,total_vaccinations 
+	,avg(total_vaccinations) over (partition by v.country order by total_vaccinations)
+	FROM vaccines v
+
+
 
 
 
