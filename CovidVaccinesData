@@ -52,6 +52,15 @@ group by 1
 order by sum(people_vaccinated) desc
 limit 1
 
+--Pull data on Canada fields that had completed full vaccinations in text and show a different method
+Select
+	cv.*,
+	(Case
+		WHEN cv.people_fully_vaccinated IS NULL THEN 'NOT FULL' ELSE 'FULL' END) as Full_2
+from can_vaccines cv
+order by cv.dates asc
+
+
 
 
 
