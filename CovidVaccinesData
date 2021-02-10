@@ -31,3 +31,27 @@ From 'C:\Users\essmi\Downloads\country_vaccinations_test.csv'
 Delimiter ','
 CSV HEADER
 
+----What country had the most daily vaccinations in the month of January
+Select 
+	country
+	,Sum(daily_vaccinations) as daily_vaccinations	
+From vaccines
+where vaccines.dates Between '2021-01-01' and '2021-01-31'
+and daily_vaccinations IS NOT NULL
+group by 1
+order by Sum(daily_vaccinations) desc
+
+----What company had the most people vaccinated as of February 3rd
+Select 
+	vaccines as company
+	,sum(people_vaccinated)
+From vaccines
+where vaccines.dates <= '2021-02-03'
+and people_vaccinated IS NOT NULL
+group by 1
+order by sum(people_vaccinated) desc
+limit 1
+
+
+
+
