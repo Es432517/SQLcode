@@ -66,6 +66,13 @@ Select
 -- 	,total_vaccinations 
 	,avg(total_vaccinations) over (partition by v.country order by total_vaccinations)
 	FROM vaccines v
+	
+	-- What netflix films directors had movies released after 2016? Use join!!
+Select nt.director 
+from netflix_titles nt
+join netflix_data2 n2 on n2.show_id = nt.show_id
+where n2.release_year > '2016'
+and nt.director IS NOT NULL
 
 
 
