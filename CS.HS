@@ -6,7 +6,7 @@ Create table HS_customer_base (
 	Customer_Segment Varchar(50),
 	HubSpot_Owner_Segment Varchar(255),
 	Customer_Bill_Month Varchar(50),
-	MRR_USD money
+	MRR_USD int
 
 );
 
@@ -32,7 +32,7 @@ Create table hs_daily_changes (
 	Change_Bucket_Rollup varchar(255),
 	Change_Bucket_Detail varchar(255),
 	Sales_Receives_Commisions varchar(50),
-	Change_Amount_USD money
+	Change_Amount_USD int
 )
 ;
 
