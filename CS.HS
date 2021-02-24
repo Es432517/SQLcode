@@ -10,20 +10,25 @@ Create table HS_customer_base (
 
 );
 
-Drop table hs_customer_base
+-- Drop table hs_customer_base
 
 Copy HS_customer_base 
-	(Month,
+	(
+	 Month,
  	 Customer_ID,
 	 Product_Tier,
 	 Customer_Geography,
 	 Customer_Segment,
 	 HubSpot_Owner_Segment,
 	 Customer_Bill_Month,
-	 MRR_USD)
-From 'C:\Users\essmi\OneDrive\Documents\hs_customer_base_data.csv'
+	 MRR_USD
+	)
+From 'C:\Users\essmi\OneDrive\Documents\hs_customer_base.csv'
 Delimiter ','
 CSV HEADER
+
+Select *
+from hs_customer_base
 
 Create table hs_daily_changes (
 	Month Date,
