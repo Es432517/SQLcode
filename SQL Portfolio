@@ -1,5 +1,4 @@
 --Create a table for Vaccines Raw Data
-Create a table for Vaccines Raw Data
 Create TABLE Vaccines (
   country VARCHAR(50),
   iso_code VARCHAR(50),
